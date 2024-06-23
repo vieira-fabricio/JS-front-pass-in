@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Evento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Criar Novo Evento</h2>
+
+        <form id="eventForm">
+            <div class="form-group">
+                <label for="title">Título do Evento:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Descrição:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="capacity">Capacidade de Pessoas:</label>
+                <input type="number" id="capacity" name="capacity" min="1" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Criar Evento</button>
+            </div>
+        </form>
+        <button id="btnVoltar">Voltar</button>
+
+        <!-- Elemento para exibir a mensagem de sucesso -->
+        <div id="successMessage" class="message">
+            Evento criado com sucesso!
+        </div>
+
+        <!-- Elemento para exibir a mensagem de erro -->
+        <div id="errorMessage" class="message error" style="display: none;"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
