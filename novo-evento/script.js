@@ -58,5 +58,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.getElementById('btnVoltar').addEventListener('click', function() {
     // Redirecionar para a página de criar novo evento
-    window.location.href = '../lista-eventos/listaEvento.html';
+    window.location.href = '../index.html';
 });
