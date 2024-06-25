@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="novoParticipante.css">
+    <title>Novo Participante</title>
+</head>
+<body>
+    <header>
+        <h1>Registrar Participação no Evento</h1>
+    </header>
+    <main>
+        <form id="registrationForm" action="/submit-participation" method="post">
+            <input type="hidden" id="eventId" name="eventId">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit">Confirmar Participação</button>
+
+            <div class="loading-message" id="loadingMessage">Registrando participação...</div>
+        </form>
+    </main>
+    <script src="novoParticipante.js"></script>
+</body>
+</html>
