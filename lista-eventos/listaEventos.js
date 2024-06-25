@@ -28,8 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const codigoEvento = criarElemento('p', 'codigo-evento', `Código do evento: ${evento.id}`);
         const detalhesEvento = criarElemento('p', 'detalhes-evento', `Detalhes do evento: ${evento.details}`);
         const vagasDisponiveis = criarElemento('p', 'vagas-disponiveis', `Vagas Disponíveis: ${evento.maximumAttendees}`);
+        const registrarBtn = criarElemento('a', 'btn', 'Registrar Participação');
+        registrarBtn.href = `novo-participante/registrarParticipante.html?eventId=${evento.id}`;
+        console.log(registrarBtn)
 
-        divEvento.append(nomeEvento, codigoEvento, detalhesEvento, vagasDisponiveis);
+        divEvento.append(nomeEvento, codigoEvento, detalhesEvento, vagasDisponiveis, registrarBtn);
         document.getElementById('eventos').appendChild(divEvento);
     }
 
