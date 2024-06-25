@@ -26,11 +26,48 @@ h1 {
     font-family: 'Roboto Condensend';
 }
 
+#criarEventoBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#criarEventoBtn:hover {
+    background-color: #0056b3;
+}
+
 .evento {
+    background-color: rgb(206, 202, 202);
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+}
+
+.evento h2 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.evento .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.evento .btn:hover {
+    background-color: #0056b3;
 }
 
 .nome-evento {
