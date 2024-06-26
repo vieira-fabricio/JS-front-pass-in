@@ -25,9 +25,10 @@ main {
 
 form {
     background-color: #d1cfcf;
-    padding: 8rem;
+    padding: 6rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
 }
 
 .form-group {
@@ -58,9 +59,10 @@ button {
     color: white;
     border: none;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 0.90rem;
     font-family: 'Roboto';
     cursor: pointer;
+    margin-bottom: 1rem;
 }
 
 button:hover {
