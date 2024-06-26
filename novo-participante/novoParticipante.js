@@ -73,4 +73,9 @@ document.addEventListener("DOMContentLoaded", function() {
             loadingMessage.style.display = 'none';
         });
     }
+
+    document.getElementById('btnVoltar').addEventListener('click', function() {
+        // Redirecionar para a página de criar novo evento
+        window.location.href = '../index.html';
+    });
 });
