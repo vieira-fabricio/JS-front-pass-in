@@ -27,12 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const nomeEvento = criarElemento('h2', 'nome-evento', evento.title);
         const codigoEvento = criarElemento('p', 'codigo-evento', `Código do evento: ${evento.id}`);
         const detalhesEvento = criarElemento('p', 'detalhes-evento', `Detalhes do evento: ${evento.details}`);
-        const vagasDisponiveis = criarElemento('p', 'vagas-disponiveis', `Vagas Disponíveis: ${evento.maximumAttendees}`);
-        const registrarBtn = criarElemento('a', 'btn', 'Registrar Participação');
-        registrarBtn.href = `novo-participante/registrarParticipante.html?eventId=${evento.id}`;
-        console.log(registrarBtn)
+        const verDetalhesBtn = criarElemento('a', 'btn', 'Ver detalhes');
+        verDetalhesBtn.href = `ver-detalhes/verDetalhes.html?eventId=${evento.id}`;
 
-        divEvento.append(nomeEvento, codigoEvento, detalhesEvento, vagasDisponiveis, registrarBtn);
+        divEvento.append(nomeEvento, codigoEvento, detalhesEvento, verDetalhesBtn);
         document.getElementById('eventos').appendChild(divEvento);
     }
 
@@ -45,9 +43,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Chamando a função para adicionar os eventos ao DOM
     obterEventosDoBanco();
-
-    document.getElementById('criarEventoBtn').addEventListener('click', function() {
-        // Redirecionar para a página de criar novo evento
-        window.location.href = 'novo-evento/new-event.html';
-    });
 });
