@@ -27,10 +27,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const nomeEvento = criarElemento('h2', 'nome-evento', evento.title);
         const codigoEvento = criarElemento('p', 'codigo-evento', `Código do evento: ${evento.id}`);
         const detalhesEvento = criarElemento('p', 'detalhes-evento', `Detalhes do evento: ${evento.details}`);
+        const dataHora = criarElemento('p', 'data-hora', `Data: ${evento.dateHour}`);
         const verDetalhesBtn = criarElemento('a', 'btn', 'Ver detalhes');
         verDetalhesBtn.href = `ver-detalhes/verDetalhes.html?eventId=${evento.id}`;
 
-        divEvento.append(nomeEvento, codigoEvento, detalhesEvento, verDetalhesBtn);
+        novaData = dataHora.toLocaleString('pt-BR', { timezone: 'UTC' })
+        console.log(novaData)
+
+        divEvento.append(nomeEvento, codigoEvento, detalhesEvento, dataHora, verDetalhesBtn);
         document.getElementById('eventos').appendChild(divEvento);
     }
 
