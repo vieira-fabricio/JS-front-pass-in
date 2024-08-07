@@ -24,15 +24,25 @@ document.addEventListener('DOMContentLoaded', function() {
         const divEvento = document.createElement('div');
         divEvento.classList.add('evento');
 
+        const dataDoBackend = evento.dateHour;
+        const dataConvertida = new Date(dataDoBackend);
+
+        const dia = dataConvertida.getDate().toString().padStart(2, '0');
+        const mes = (dataConvertida.getMonth() + 1).toString().padStart(2, '0'); // Janeiro é 0!
+        const ano = dataConvertida.getFullYear();
+
+        const horas = dataConvertida.getHours().toString().padStart(2, '0');
+        const minutos = dataConvertida.getMinutes().toString().padStart(2, '0');
+
+        const dataFormatada = `${dia}/${mes}/${ano} - ${horas}:${minutos}`;
+
         const nomeEvento = criarElemento('h2', 'nome-evento', evento.title);
         const codigoEvento = criarElemento('p', 'codigo-evento', `Código do evento: ${evento.id}`);
         const detalhesEvento = criarElemento('p', 'detalhes-evento', `Detalhes do evento: ${evento.details}`);
-        const dataHora = criarElemento('p', 'data-hora', `Data: ${evento.dateHour}`);
+        const dataHora = criarElemento('p', 'data-hora', `Data/Hora: ${dataFormatada}`);
         const verDetalhesBtn = criarElemento('a', 'btn', 'Ver detalhes');
         verDetalhesBtn.href = `ver-detalhes/verDetalhes.html?eventId=${evento.id}`;
 
-        novaData = dataHora.toLocaleString('pt-BR', { timezone: 'UTC' })
-        console.log(novaData)
 
         divEvento.append(nomeEvento, codigoEvento, detalhesEvento, dataHora, verDetalhesBtn);
         document.getElementById('eventos').appendChild(divEvento);
