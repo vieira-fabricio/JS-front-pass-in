@@ -7,25 +7,28 @@ document.addEventListener('DOMContentLoaded', function() {
         // Obter os valores dos inputs
         const title = document.getElementById('title').value;
         const description = document.getElementById('description').value;
+        const dateHour = document.getElementById('dataHora').value;
         const capacity = parseInt(document.getElementById('capacity').value);
 
         // Exemplo de manipulação dos dados (exibindo no console)
         console.log('Título do Evento:', title);
         console.log('Descrição:', description);
+        console.log('Data/Hora:', dateHour);
         console.log('Capacidade de Pessoas:', capacity);
 
         // Aqui você pode adicionar mais lógica para enviar os dados para um servidor, por exemplo
         // Exemplo:
-        createEvent(title, description, capacity);
+        createEvent(title, description, dateHour, capacity);
     });
 
-    async function createEvent(title, description, capacity) {
+    async function createEvent(title, description, dateHour, capacity) {
         
         const apiUrl = 'http://localhost:8080/events';
 
         const data = {
             title: title,
             details: description,
+            dateHour: dateHour,
             maximumAttendees: capacity
         };
 
@@ -53,6 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function(){
             sucessMessage.style.display = 'none'; // Esconde a mensagem após 3 segundos
         }, 3000);
+        // Limpa o formulário após o registro bem-sucedido
+        eventForm.reset();
     }
 });
 
