@@ -58,3 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Chamando a função para adicionar os eventos ao DOM
     obterEventosDoBanco();
 });
+
+document.getElementById('criarEventoBtn').addEventListener('click', function() {
+    // Redirecionar para a página de criar novo evento
+    window.location.href = '../novo-evento/new-event.html';
+});
