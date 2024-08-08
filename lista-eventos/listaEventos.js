@@ -11,9 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.json();
             })
             .then(eventos => {
+                // Ordenar os eventos pela data
+                eventos.sort((a, b) => new Date(b.dateHour) - new Date(a.dateHour));
+
                 eventos.forEach(evento => {
-                  adicionarEvento(evento)  
-                });               
+                    adicionarEvento(evento)  
+                });          
             })
             .catch(error => console.error('Erro ao obter eventos', error));
     }
@@ -23,6 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const divEvento = document.createElement('div');
         divEvento.classList.add('evento');
+
+        //pegando a data atual e comparando com a data do evento
+        const now = new Date();
+        const eventoDataHora = new Date(evento.dateHour);
+        const isPastEvent = eventoDataHora < now;
 
         const dataDoBackend = evento.dateHour;
         const dataConvertida = new Date(dataDoBackend);
@@ -40,9 +48,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const codigoEvento = criarElemento('p', 'codigo-evento', `Código do evento: ${evento.id}`);
         const detalhesEvento = criarElemento('p', 'detalhes-evento', `Detalhes do evento: ${evento.details}`);
         const dataHora = criarElemento('p', 'data-hora', `Data/Hora: ${dataFormatada}`);
+
         const verDetalhesBtn = criarElemento('a', 'btn', 'Ver detalhes');
         verDetalhesBtn.href = `ver-detalhes/verDetalhes.html?eventId=${evento.id}`;
-
+        if(isPastEvent) {
+            verDetalhesBtn.classList.add('disabled');
+            verDetalhesBtn.style.pointerEvents = 'none';
+            const concluidoMsg = criarElemento('p', 'concluido', 'Evento Concluído');
+            divEvento.appendChild(concluidoMsg);
+        }
 
         divEvento.append(nomeEvento, codigoEvento, detalhesEvento, dataHora, verDetalhesBtn);
         document.getElementById('eventos').appendChild(divEvento);
