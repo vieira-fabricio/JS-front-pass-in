@@ -39,10 +39,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Função para criar e adicionar os detalhes do evento ao DOM
     function exibirDetalhesEvento(evento) {
         const detalhesEvento = document.getElementById('detalhesEvento');
+
+        const dataDoBackend = evento.eventDetail.dateHour;
+        const dataConvertida = new Date(dataDoBackend);
+
+        const dia = dataConvertida.getDate().toString().padStart(2, '0');
+        const mes = (dataConvertida.getMonth() + 1).toString().padStart(2, '0'); // Janeiro é 0!
+        const ano = dataConvertida.getFullYear();
+
+        const horas = dataConvertida.getHours().toString().padStart(2, '0');
+        const minutos = dataConvertida.getMinutes().toString().padStart(2, '0');
+
+        const dataFormatada = `${dia}/${mes}/${ano} - ${horas}:${minutos}`;
         detalhesEvento.innerHTML = `
             <p><strong>Código do Evento:</strong> ${evento.eventDetail.id}</p>
             <p><strong>Nome do Evento:</strong> ${evento.eventDetail.title}</p>
             <p><strong>Detalhes:</strong> ${evento.eventDetail.details}</p>
+            <p><strong>Data/Hora:</strong> ${dataFormatada}</p>
             <p><strong>Quantidade de Vagas:</strong> ${evento.eventDetail.maximumAttendees}</p>
             <p><strong>Participantes confirmados:</strong> ${evento.eventDetail.attendeesAmount}</p>
         `;

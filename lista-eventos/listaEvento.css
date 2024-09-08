@@ -83,6 +83,10 @@ h1 {
     color: #555;
 }
 
+.data-hora {
+    color: #555;
+}
+
 .vagas-disponiveis {
     font-weight: bold;
 }
@@ -104,4 +108,18 @@ button:hover {
 
 button:active {
     background-color: #004080;
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    color: #ccc;
+    text-decoration: none;
+}
+
+.btn.disabled {
+    background-color: #ccc;
+    color: #666;
+    pointer-events: none;
+    cursor: not-allowed;
 }
