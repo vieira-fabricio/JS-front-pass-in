@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     var url = 'http://localhost:8080/events/';
+    let eventos = []; // Declare a variável globalmente
 
     function obterEventosDoBanco() {
         fetch(url)
@@ -10,13 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 return response.json();
             })
-            .then(eventos => {
-                // Ordenar os eventos pela data
-                eventos.sort((a, b) => new Date(b.dateHour) - new Date(a.dateHour));
-
-                eventos.forEach(evento => {
-                    adicionarEvento(evento)  
-                });          
+            .then(data => {
+                eventos = data; // Atribua os eventos ao array global
+                renderizarEventos(eventos, 'asc'); // Renderiza eventos após carregá-los
             })
             .catch(error => console.error('Erro ao obter eventos', error));
     }
@@ -69,11 +66,34 @@ document.addEventListener('DOMContentLoaded', function() {
         return elemento;
     }
 
+    function renderizarEventos(eventos, ordem) {
+        const eventosContainer = document.getElementById('eventos');
+        eventosContainer.innerHTML = ''; // Limpa a lista existente
+
+        // Ordenar eventos com base na seleção
+        const eventosOrdenados = eventos.slice().sort((a, b) => {
+            if(ordem === 'asc') {
+                return new Date(a.dateHour) - new Date(b.dateHour);
+            } else {
+                return new Date(b.dateHour) - new Date(a.dateHour);
+            }
+        });
+
+        // Adicionar eventos ao DOM
+        eventosOrdenados.forEach(adicionarEvento);
+    }
+
+    // Adicionar evento de mudança no dropdown
+    document.getElementById('order-select').addEventListener('change', (event) => {
+        const ordem = event.target.value;
+        renderizarEventos(eventos, ordem)
+    })
+
     // Chamando a função para adicionar os eventos ao DOM
     obterEventosDoBanco();
-});
 
-document.getElementById('criarEventoBtn').addEventListener('click', function() {
-    // Redirecionar para a página de criar novo evento
-    window.location.href = '../novo-evento/new-event.html';
+    document.getElementById('criarEventoBtn').addEventListener('click', function() {
+        // Redirecionar para a página de criar novo evento
+        window.location.href = '../novo-evento/new-event.html';
+    });
 });
