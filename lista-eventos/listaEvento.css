@@ -12,26 +12,31 @@ body {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #d1cfcf;
+    background-color: #080707;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
-    text-align: center;
-    color: #333;
+.label {
+    color: white;
 }
 
-h1 {
-    font-family: 'Roboto Condensend';
+h1, h2 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    background: linear-gradient(90deg, rgba(48,124,208,1) 0%, rgba(15,204,254,1) 30%, rgba(0,255,128,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 #criarEventoBtn {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    background-color: #545750;
+    color: #a9fc4a;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -39,16 +44,17 @@ h1 {
 }
 
 #criarEventoBtn:hover {
-    background-color: #0056b3;
+    background-color: #1a1b19;
 }
 
 .evento {
-    background-color: rgb(206, 202, 202);
-    border: 1px solid #ccc;
+    background-color: #080707;
+    border: 1px solid rgb(70, 250, 100);
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .evento h2 {
@@ -59,8 +65,8 @@ h1 {
 .evento .btn {
     display: inline-block;
     padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
+    background-color: #545750;
+    color: #a9fc4a;
     text-decoration: none;
     border-radius: 4px;
     font-size: 14px;
@@ -68,7 +74,7 @@ h1 {
 }
 
 .evento .btn:hover {
-    background-color: #0056b3;
+    background-color: #1a1b19;
 }
 
 .nome-evento {
@@ -76,15 +82,15 @@ h1 {
 }
 
 .codigo-evento{
-    color: #555;
+    color: #333;
 }
 
 .detalhes-evento {
-    color: #555;
+    color: #333;
 }
 
 .data-hora {
-    color: #555;
+    color: #333;
 }
 
 .vagas-disponiveis {
@@ -92,8 +98,8 @@ h1 {
 }
 
 button {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #545750;
+    color: #a9fc4a;
     border: none;
     padding: 10px 20px;
     font-family: 'Roboto';
@@ -103,17 +109,17 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #1a1b19;
 }
 
 button:active {
-    background-color: #004080;
+    background-color: #545750;
 }
 
 .disabled {
     pointer-events: none;
     cursor: not-allowed;
-    color: #ccc;
+    color: #a5a3a3;
     text-decoration: none;
 }
 
@@ -122,4 +128,8 @@ button:active {
     color: #666;
     pointer-events: none;
     cursor: not-allowed;
+}
+
+.concluido {
+    color: gray;
 }
