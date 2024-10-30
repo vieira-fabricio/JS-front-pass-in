@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function createEvent(title, description, dateHour, capacity) {
         
-        const apiUrl = 'http://localhost:8080/events';
+        const apiUrl = 'https://localhost:8080/events';
 
         const data = {
             title: title,
