@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #050505;
     color: white;
     padding: 1rem 0;
     text-align: center;
@@ -23,8 +23,16 @@ main {
     padding: 1rem;
 }
 
+h1 {
+    background: linear-gradient(90deg, rgba(48,124,208,1) 0%, rgba(15,204,254,1) 30%, rgba(0,255,128,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 form {
-    background-color: #d1cfcf;
+    background-color: #050505;
+    border: 1px solid rgb(70, 250, 100);
     padding: 6rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -55,8 +63,8 @@ button {
     display: block;
     width: 100%;
     padding: 0.75rem;
-    background-color: #007bff;
-    color: white;
+    background-color: #545750;
+    color: #a9fc4a;
     border: none;
     border-radius: 4px;
     font-size: 0.90rem;
@@ -66,7 +74,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #1a1b19;
 }
 
 .loading-message {
