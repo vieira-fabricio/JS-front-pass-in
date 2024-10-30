@@ -11,13 +11,14 @@
         <h1>Lista de Eventos</h1>
         <button id="criarEventoBtn">Novo Evento</button>
 
-        <!-- Dropdown para selecionar a ordem dos eventos -->
-        <label for="order-select">Ordenar por:</label>
-        <select id="order-select">
-            <option value="asc">Mais antigo primeiro</option>
-            <option value="desc">Mais recente primeiro</option>
-        </select>
-        
+        <div class="label">
+            <!-- Dropdown para selecionar a ordem dos eventos -->
+            <label for="order-select">Ordenar por:</label>
+            <select id="order-select">
+                <option value="asc">Mais antigo primeiro</option>
+                <option value="desc">Mais recente primeiro</option>
+            </select>
+        </div>
         <div id="eventos" class="eventos">
             <!-- Os eventos serão adicionados aqui dinamicamente -->
         </div>
