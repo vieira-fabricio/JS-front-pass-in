@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    var url = 'http://localhost:8080/events/';
+    var url = 'http://159.112.177.115:8080/events/';
     let eventos = []; // Declare a variável globalmente
 
     function obterEventosDoBanco() {
