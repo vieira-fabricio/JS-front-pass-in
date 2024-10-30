@@ -11,10 +11,12 @@ body {
 .container {
     max-width: 600px;
     margin: 0 auto;
-    background-color: #d1cfcf;
+    background-color: #050505;
+    color: #727070;
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(70, 250, 100);
 }
 
 h1 {
@@ -24,6 +26,11 @@ h1 {
 h2 {
     color: #333;
     margin-bottom: 20px;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(48,124,208,1) 0%, rgba(15,204,254,1) 30%, rgba(0,255,128,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .form-group {
@@ -50,8 +57,8 @@ textarea {
 }
 
 button {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #545750;
+    color: #a9fc4a;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -61,11 +68,11 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #1a1b19;
 }
 
 button:active {
-    background-color: #004080;
+    background-color: #1a1b19;
 }
 
 .message {
