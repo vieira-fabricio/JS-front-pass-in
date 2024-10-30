@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function obterDetalhesEvento(eventId) {
 
-        var url = `https://localhost:8080/events/${eventId}`;
+        var url = `https://159.112.177.115:8080/events/${eventId}`;
 
         fetch(url)
             .then(response => {
