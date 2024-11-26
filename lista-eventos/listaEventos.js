@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    var url = 'https://159.112.177.115:8080/events/';
+    var url = 'https://159.112.177.115/events/';
     let eventos = []; // Declare a variável globalmente
 
     function obterEventosDoBanco() {
