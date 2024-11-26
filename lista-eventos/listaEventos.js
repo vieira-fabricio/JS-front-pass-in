@@ -94,6 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('criarEventoBtn').addEventListener('click', function() {
         // Redirecionar para a página de criar novo evento
-        window.location.href = '../novo-evento/new-event.html';
+        window.location.href = '/novo-evento/new-event.html';
     });
 });
