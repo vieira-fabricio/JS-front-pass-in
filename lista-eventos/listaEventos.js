@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    var url = 'https://159.112.177.115/events/';
+    const url = 'http://localhost:8080/events/';
     let eventos = []; // Declare a variável globalmente
 
     function obterEventosDoBanco() {
@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 eventos = data; // Atribua os eventos ao array global
                 renderizarEventos(eventos, 'asc'); // Renderiza eventos após carregá-los
+                console.log('dados', data)
             })
             .catch(error => console.error('Erro ao obter eventos', error));
     }

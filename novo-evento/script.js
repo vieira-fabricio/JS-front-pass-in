@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function createEvent(title, description, dateHour, capacity) {
         
-        const apiUrl = 'http://159.112.177.115:8080/events/';
+        const apiUrl = 'http://localhost:8080/events/';
 
         const data = {
             title: title,

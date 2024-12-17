@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const eventId = data.eventId;
         
-        url = `http://159.112.177.115:8080/events/${eventId}/attendees`;
+        url = `http://localhost:8080/events/${eventId}/attendees`;
 
         fetch(url, {
             method: 'POST',
