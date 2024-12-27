@@ -59,7 +59,7 @@ h1, h2 {
 
 .evento h2 {
     margin: 0 0 10px;
-    color: #333;
+    color: #4b4a4a;
 }
 
 .evento .btn {
@@ -82,15 +82,15 @@ h1, h2 {
 }
 
 .codigo-evento{
-    color: #333;
+    color: #7d807a;
 }
 
 .detalhes-evento {
-    color: #333;
+    color: #7d807a;
 }
 
 .data-hora {
-    color: #333;
+    color: #7d807a;
 }
 
 .vagas-disponiveis {
